@@ -54,6 +54,24 @@ public class PoolingSystem : MonoBehaviour
         return objectTo_Spawn;
     }
 
+    public int GetPoolSize(string tag)
+    {
+        if(!pool_Dictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
+            return 0;
+        }
+        else 
+        {
+            foreach (Pool pool in pools)
+            {
+                if(pool.tag == tag) return pool.size;
+                else return 0;
+            }
+            return 0;
+        }
+    }
+
     public void ExpandPool(string tag, int amount)
     {
         if(!pool_Dictionary.ContainsKey(tag))
@@ -62,18 +80,20 @@ public class PoolingSystem : MonoBehaviour
         }
         else 
         {
-            for (int i = 0; i < amount; i++)
+            foreach (Pool pool in pools)
             {
-                foreach (Pool pool in pools)
+                if(pool.tag == tag)
                 {
-                    if(pool.tag == tag)
+                    for (int i = 0; i < amount; i++)
                     {
-                        GameObject obj = Instantiate(pool.prefab, transform);
+                        GameObject obj = Instantiate(pool.prefab, transform); 
                         obj.SetActive(false);
-                        object_Pool.Enqueue(obj);
-                        break;
+                        object_Pool.Enqueue(obj);    
                     }
+                    pool.size = pool.size + amount;
+                    Debug.Log("pool.size: " +  pool.size + " amount: " + amount);
                 }
+                
             }
             
         }

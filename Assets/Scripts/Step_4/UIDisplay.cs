@@ -9,6 +9,7 @@ public class UIDisplay : MonoBehaviour
     private GameObject poolOBJ;
     [SerializeField] private int spawnedCubesX;
     [SerializeField] private Text inputFieldText;
+    [SerializeField] private string tag;
 
     private void Start() 
     {
@@ -17,6 +18,13 @@ public class UIDisplay : MonoBehaviour
 
     private void SpawnCubes()
     {
+        if(spawnedCubesX > PoolingSystem.Instance.GetPoolSize(tag))
+        {
+            int size = PoolingSystem.Instance.GetPoolSize(tag);
+            int toExpand = spawnedCubesX - size;
+            PoolingSystem.Instance.ExpandPool(tag, toExpand);
+        } 
+
         int amountActive = 0;
 
         for (int i = 0; i < poolOBJ.transform.childCount; i++)
@@ -31,7 +39,7 @@ public class UIDisplay : MonoBehaviour
             for (int i = 0; i < SpawnAmount; i++)
             {
                 //set to zero just to initialize
-                GameObject cube = PoolingSystem.Instance.SpawnFromPool("Cube", Vector3.zero);
+                GameObject cube = PoolingSystem.Instance.SpawnFromPool(tag, Vector3.zero);
 
                 //set real randomPos
                 MoveRandomlyWithinZone moveScript = cube.GetComponent<MoveRandomlyWithinZone>();

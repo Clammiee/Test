@@ -238,6 +238,7 @@ MonoBehaviour:
   amountSpawnedText: {fileID: 1077526152}
   spawnedCubesX: 0
   inputFieldText: {fileID: 1605325951}
+  tag: Cube
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +364,7 @@ MonoBehaviour:
   - tag: Cube
     prefab: {fileID: 7541244255191157354, guid: d17807fc9ac220f4c94cb515d4ec4d27,
       type: 3}
-    size: 10
+    size: 5
 --- !u!4 &713861973
 Transform:
   m_ObjectHideFlags: 0
