@@ -6,12 +6,7 @@ public class TestPooling : MonoBehaviour
 {
     void Start()
     {
-        PoolingSystem.Instance.SpawnFromPool("Sphere", this.transform.position);
-        PoolingSystem.Instance.ExpandPool("Sphere", 3);
-    }
-
-    void Update()
-    {
-        
+        PoolingSystem.Instance.SpawnFromPool("Cube", this.transform.position);
+        PoolingSystem.Instance.ExpandPool("Cube", 3);
     }
 }
