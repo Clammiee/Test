@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allNeighbors: []
   closestNeighbor: {fileID: 0}
+  tag: Sphere
 --- !u!114 &4430776528798846913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +125,5 @@ MonoBehaviour:
   x: 5
   y: 5
   z: 5
+  randomPos: {x: 0, y: 0, z: 0}
+  speed: 1

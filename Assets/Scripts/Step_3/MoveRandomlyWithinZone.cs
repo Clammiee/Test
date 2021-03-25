@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MoveRandomlyWithinZone : MonoBehaviour
 {
-    [SerializeField] private float x;
-    [SerializeField] private float y;
-    [SerializeField] private float z;
+    //public so we can access from other script
+    public float x;
+    public float y;
+    public float z;
     [SerializeField] private Vector3 randomPos;
     [SerializeField] private float speed = 1f;
 

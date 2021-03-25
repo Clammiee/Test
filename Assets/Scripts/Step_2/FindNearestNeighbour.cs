@@ -6,6 +6,7 @@ public class FindNearestNeighbour : MonoBehaviour, IGetNeighors
 {
     [SerializeField] private List<Transform> allNeighbors = new List<Transform>();
     [SerializeField] private Transform closestNeighbor;
+    [SerializeField] private string tag;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class FindNearestNeighbour : MonoBehaviour, IGetNeighors
     {
         //tell all neighbors to recalculate
         RecalculateNeighors();
-        GameObject[] spheres = GameObject.FindGameObjectsWithTag("Sphere");
+        GameObject[] spheres = GameObject.FindGameObjectsWithTag(tag);
 
         foreach (GameObject sphere in spheres)
         {
@@ -31,7 +32,7 @@ public class FindNearestNeighbour : MonoBehaviour, IGetNeighors
     public void RecalculateNeighors()
     {
         //Not using FindObjectsWithType because it is too slow performance-wise
-        GameObject[] spheres = GameObject.FindGameObjectsWithTag("Sphere");
+        GameObject[] spheres = GameObject.FindGameObjectsWithTag(tag);
 
         //add to neighbor list only if it has script
         for (int i = 0; i < spheres.Length; i++)
