@@ -11,6 +11,11 @@ public class MoveRandomlyWithinZone : MonoBehaviour
     [SerializeField] private Vector3 randomPos;
     [SerializeField] private float speed = 1f;
 
+    private void OnEnable() 
+    {
+        GenerateRandomPos();
+    }
+
     private void FixedUpdate() 
     {
         Move();
