@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ad78c2552180a4899e25be456350b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 5
-  y: 5
-  z: 5
+  x: 10
+  y: 10
+  z: 10
   randomPos: {x: 0, y: 0, z: 0}
   speed: 1
 --- !u!114 &2956242335790655031

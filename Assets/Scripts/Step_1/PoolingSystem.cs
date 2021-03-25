@@ -91,7 +91,7 @@ public class PoolingSystem : MonoBehaviour
                         object_Pool.Enqueue(obj);    
                     }
                     pool.size = pool.size + amount;
-                    Debug.Log("pool.size: " +  pool.size + " amount: " + amount);
+                    //Debug.Log("pool.size: " +  pool.size + " amount: " + amount);
                 }
                 
             }
